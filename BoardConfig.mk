@@ -60,6 +60,10 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 #           both init scripts can be found in the recovery folder
 #TARGET_RECOVERY_INITRC := device/samsung/t03g/recovery/init.rc
 
+# Recovery
+TARGET_RECOVERY_FSTAB := device/samsung/t03g/recovery/twrp.fstab
+RECOVERY_FSTAB_VERSION := 2
+
 # TWRP specific build flags
 BOARD_USE_CUSTOM_RECOVERY_FONT:= \"roboto_15x24.h\"
 DEVICE_RESOLUTION := 720x1280

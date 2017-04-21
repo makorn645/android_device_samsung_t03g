@@ -21,8 +21,7 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/recovery/encryption/libsec_km.so:root/sbin/libsec_km.so \
 		$(LOCAL_PATH)/recovery/runatboot.sh:root/sbin/runatboot.sh \
 		$(LOCAL_PATH)/file_contexts:recovery/root/prebuilt_file_contexts \
-        $(LOCAL_PATH)/recovery/init.recovery.smdk4x12.rc:root/init.recovery.smdk4x12.rc
-
+		$(LOCAL_PATH)/recovery/init.recovery.smdk4x12.rc:root/init.recovery.smdk4x12.rc
 
 $(call inherit-product, build/target/product/full.mk)
 
