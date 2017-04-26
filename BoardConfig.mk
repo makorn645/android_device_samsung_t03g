@@ -65,10 +65,22 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 1048576
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := f2fs
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/n7100/rootdir/fstab.smdk4x12
+TARGET_RECOVERY_FSTAB := device/samsung/n7100/rootdir/twrp.fstab
 TARGET_RECOVERY_DENSITY := mdpi
 TARGET_USERIMAGES_USE_F2FS := true
 RECOVERY_FSTAB_VERSION := 2
+
+# TWRP
+TW_THEME := portrait_mdpi
+RECOVERY_SDCARD_ON_DATA := true
+BOARD_HAS_NO_REAL_SDCARD := true
+TW_NO_REBOOT_BOOTLOADER := true
+HAVE_SELINUX := true
+TW_HAS_DOWNLOAD_MODE := true
+TW_MAX_BRIGHTNESS := 255
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
+TW_INCLUDE_CRYPTO := true
+TW_EXCLUDE_SUPERSU := true
 
 # Compatibility with pre-kitkat Sensor HALs
 # SENSORS_NEED_SETRATE_ON_ENABLE := true
@@ -76,3 +88,4 @@ RECOVERY_FSTAB_VERSION := 2
 # Selinux
 BOARD_SEPOLICY_DIRS += \
     device/samsung/n7100/selinux
+
