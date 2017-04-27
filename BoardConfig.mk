@@ -65,11 +65,16 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 1048576
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := f2fs
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/n7100/rootdir/twrp.fstab
-TARGET_RECOVERY_DENSITY := mdpi
-TARGET_USERIMAGES_USE_F2FS := true
-RECOVERY_FSTAB_VERSION := 2
+# RECOVERY_VARIANT := twrp
 
+# TARGET_RECOVERY_FSTAB := device/samsung/n7100/rootdir/twrp.fstab
+# TARGET_RECOVERY_DENSITY := mdpi
+TARGET_USERIMAGES_USE_F2FS := true
+# RECOVERY_FSTAB_VERSION := 2
+
+PRODUCT_COPY_FILES += \
+    device/samsung/n7100/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
+	
 # TWRP
 TW_THEME := portrait_mdpi
 RECOVERY_SDCARD_ON_DATA := true
@@ -81,6 +86,11 @@ TW_MAX_BRIGHTNESS := 255
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_INCLUDE_CRYPTO := true
 TW_EXCLUDE_SUPERSU := true
+LZMA_RAMDISK_TARGETS := boot,recovery 
+TARGET_RECOVERY_PIXEL_FORMAT := "BGRX_8888"
+TW_NO_USB_STORAGE := true
+TWRP_EVENT_LOGGING := false
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 # Compatibility with pre-kitkat Sensor HALs
 # SENSORS_NEED_SETRATE_ON_ENABLE := true
